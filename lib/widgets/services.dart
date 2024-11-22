@@ -24,7 +24,7 @@ class MyProject extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: AssetImage('back.png'),
+                  image: AssetImage('assets/back.png'),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(30),
@@ -49,9 +49,9 @@ class MyProject extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: const [
-                        project(image: 'food.png'),
-                        project(image: 'quiz.png'),
-                        project(image: 'todo.png')
+                        project(image: 'assets/food.png'),
+                        project(image: 'assets/quiz.png'),
+                        project(image: 'assets/todo.png')
                       ],
                     ),
                   ),

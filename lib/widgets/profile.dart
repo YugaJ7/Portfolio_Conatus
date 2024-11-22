@@ -16,9 +16,9 @@ class _ProfileSectionState extends State<ProfileSection> {
   ];
 
   final List<String> images = [
-    'image1.png',
-    'image2.png',
-    'image3.png',
+    'assets/image1.png',
+    'assets/image2.png',
+    'assets/image3.png',
   ];
 
   final List<String> urls = [

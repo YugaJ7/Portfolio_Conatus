@@ -42,7 +42,7 @@ class AboutSection extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Lottie.asset(
-                        'coder.json', 
+                        'assets/coder.json', 
                         height: 300,
                         width: MediaQuery.of(context).size.width,
                         repeat: true,
@@ -61,11 +61,9 @@ class AboutSection extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 24),
-                      // Stats
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // First Stat
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -88,7 +86,6 @@ class AboutSection extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(width: 32),
-                          // Second Stat
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -149,7 +146,7 @@ class AboutSection extends StatelessWidget {
                         Expanded(
                           flex: 2,
                           child: Lottie.asset(
-                            'coder.json', 
+                            'assets/coder.json', 
                             // height: MediaQuery.of(context).size.height*.5,
                             // width: MediaQuery.of(context).size.width*.5,
                             repeat: true,

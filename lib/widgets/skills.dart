@@ -13,8 +13,8 @@ class SkillsSection extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 32.0),
           child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFFF2F4F7),
+            decoration: const BoxDecoration(
+              color: Color(0xFFF2F4F7),
             ),
             child: isSmallScreen
                 ? Column(
@@ -30,12 +30,12 @@ class SkillsSection extends StatelessWidget {
                               color: const Color(0xFF344054),
                               fontFamily: 'SemiBold',
                             ),
-                            children: [
-                              const TextSpan(
+                            children: const [
+                              TextSpan(
                                 text: 'My ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
-                              const TextSpan(
+                              TextSpan(
                                 text: 'Skills',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -80,18 +80,18 @@ class SkillsSection extends StatelessWidget {
                                 padding: const EdgeInsets.all(16.0),
                                 child: RichText(
                                   textAlign: TextAlign.center,
-                                  text: TextSpan(
+                                  text: const TextSpan(
                                     style: TextStyle(
                                       fontSize: 32,
-                                      color: const Color(0xFF344054),
+                                      color: Color(0xFF344054),
                                       fontFamily: 'SemiBold',
                                     ),
                                     children: [
-                                      const TextSpan(
+                                      TextSpan(
                                         text: 'My ',
                                         style: TextStyle(fontWeight: FontWeight.bold),
                                       ),
-                                      const TextSpan(
+                                      TextSpan(
                                         text: 'Skills',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
