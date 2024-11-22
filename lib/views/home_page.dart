@@ -40,15 +40,15 @@ class HomePage extends StatelessWidget {
     return Drawer(
       backgroundColor: const Color(0xFFF2F4F7),
       child: ListView(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.all(12),
         children: [
           Container(
           color: const Color(0xFFF2F4F7),
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Center(
             child: CircleAvatar(
-              radius: 50, 
-              backgroundImage: const AssetImage('front.png'), 
+              radius: MediaQuery.of(context).size.width*0.2, 
+              backgroundImage: const AssetImage('assets/front.png'), 
             ),
           ),
         ),
