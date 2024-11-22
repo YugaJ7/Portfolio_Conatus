@@ -93,6 +93,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                         images[index],
                         urls[index],
                         index,
+                        isMobile
                       );
                     }),
                   )
@@ -107,6 +108,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                             images[index],
                             urls[index],
                             index,
+                            isMobile
                           ),
                         );
                       }),
@@ -117,12 +119,12 @@ class _ProfileSectionState extends State<ProfileSection> {
       );}
     );
   }
-  Widget _buildPortfolioCard(String title, String image, String url, int index) {
+  Widget _buildPortfolioCard(String title, String image, String url, int index,bool isSmallScreen) {
     return MouseRegion(
       onEnter: (_) => setState(() => hoverStates[index] = true),
       onExit: (_) => setState(() => hoverStates[index] = false),
       child: AnimatedContainer(
-        width: 480,
+        width: isSmallScreen?300:480,
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeInOut,
         //transform: hoverStates[index] ? Matrix4.identity().translate(0.0,-10.0,0.0) : Matrix4.identity(),
@@ -151,7 +153,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                         borderRadius: BorderRadius.circular(16),
                         child: Image.asset(
                           image,
-                          width: 460,
+                          width: isSmallScreen?280:480,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -161,7 +163,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                       right: 8,
                       child: IconButton(
                         icon: hoverStates[index]? const ImageIcon(AssetImage('icon.png')):const ImageIcon(AssetImage('icon.png')),
-                        iconSize: 50,
+                        iconSize: isSmallScreen?25:50,
                         onPressed: () {
                           _launchURL(url);
                         },
@@ -177,7 +179,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                   title,
                   style: TextStyle(
                     color: hoverStates[index] ? Colors.white : Colors.grey,
-                    fontSize: 16,
+                    fontSize: isSmallScreen?10:16,
                     fontFamily: 'SemiBold',
                   ),
                 ),

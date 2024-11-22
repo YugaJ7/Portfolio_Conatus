@@ -48,7 +48,7 @@ class SkillsSection extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Lottie.asset(
-                        'coder.json',
+                        'assets/yoga.json',
                         height: 300,
                         width: MediaQuery.of(context).size.width,
                         repeat: true,
@@ -66,7 +66,7 @@ class SkillsSection extends StatelessWidget {
                         Expanded(
                           flex: 2,
                           child: Lottie.asset(
-                            'coder.json',
+                            'assets/yoga.json',
                             repeat: true,
                           ),
                         ),
