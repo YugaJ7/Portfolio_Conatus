@@ -32,11 +32,11 @@ class ProfilePhoto extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            'title.png',
+            'assets/title.png',
             //width: MediaQuery.of(context).size.width,
           ),
           Image.asset(
-            'profile.png',
+            'assets/profile.png',
 
           ),
         ],
