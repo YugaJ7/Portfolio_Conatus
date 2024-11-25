@@ -251,28 +251,28 @@ class FooterSection extends StatelessWidget {
           spacing: 10, 
           children: [
             IconButton(
-              icon: const ImageIcon(AssetImage('facebook.png')),
+              icon: const ImageIcon(AssetImage('assets/facebook.png')),
               color: Colors.white,
               onPressed: () {
                 _launchURL('https://www.facebook.com/login/');
               },
             ),
             IconButton(
-              icon: const ImageIcon(AssetImage('instagram.png')),
+              icon: const ImageIcon(AssetImage('assets/instagram.png')),
               color: Colors.white,
               onPressed: () {
                 _launchURL('https://www.instagram.com/yuga.j7/');
               },
             ),
             IconButton(
-              icon: const ImageIcon(AssetImage('x.png')),
+              icon: const ImageIcon(AssetImage('assets/x.png')),
               color: Colors.white,
               onPressed: () {
                 _launchURL('https://x.com/yugaj7');
               },
             ),
             IconButton(
-              icon: const ImageIcon(AssetImage('mail.png')),
+              icon: const ImageIcon(AssetImage('assets/mail.png')),
               color: Colors.white,
               onPressed: () {
                 _launchURL('https://workspace.google.com/intl/en-US/gmail/');
