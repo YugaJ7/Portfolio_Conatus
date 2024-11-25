@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:yuga_portfolio/widgets/responsive.dart';
 
 class Navbar extends StatelessWidget {
-  const Navbar({super.key});
-
-  // Navigation items
+  const Navbar({super.key, required this.onNavItemTap});
+  final Function(int) onNavItemTap;
   final List<String> navItems = const [
     "Home",
     "About",
@@ -25,7 +24,7 @@ class Navbar extends StatelessWidget {
           builder: (context) => IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
-              Scaffold.of(context).openDrawer(); // Open the drawer
+              Scaffold.of(context).openDrawer();
             },
           ),
         ),
@@ -38,7 +37,7 @@ class Navbar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 60.0),
       child: Container(
-        width: 930,
+        width: 770,
         height: MediaQuery.of(context).size.height * 0.09,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -49,47 +48,48 @@ class Navbar extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:
-                navItems.map((item) => _buildNavbarItem(item, false)).toList(),
+            children: navItems.asMap().entries.map((entry) {
+              int index = entry.key;
+              String item = entry.value;
+              return _buildNavbarItem(item, false, index);
+            }).toList(),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildNavbarItem(String title, bool isActive) {
-    return MouseRegion(
-      child: StatefulBuilder(
-        builder: (context, setState) {
-          bool isHovered = false;
-          return MouseRegion(
-            onEnter: (_) => setState(() => isHovered = true),
-            onExit: (_) => setState(() => isHovered = false),
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              decoration: BoxDecoration(
-                color: isHovered || isActive
-                    ? const Color(0xFFFD853A)
-                    : Colors.black,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  // Define onPressed actions if needed
-                },
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+  Widget _buildNavbarItem(String title, bool isActive, int index) {
+  // Add a state for hover
+  ValueNotifier<bool> isHovered = ValueNotifier<bool>(false);
+
+  return MouseRegion(
+    onEnter: (_) => isHovered.value = true,
+    onExit: (_) => isHovered.value = false,
+    child: ValueListenableBuilder<bool>(
+      valueListenable: isHovered,
+      builder: (context, hovering, child) {
+        return GestureDetector(
+          onTap: () => onNavItemTap(index),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            decoration: BoxDecoration(
+              color: hovering ? const Color(0xFFFD853A) : Colors.black,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Text(
+              title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
               ),
             ),
-          );
-        },
-      ),
-    );
-  }
+          ),
+        );
+      },
+    ),
+  );
+}
+
 }

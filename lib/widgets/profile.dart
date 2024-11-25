@@ -77,7 +77,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                     style: TextStyle(color: Color(0xFF344054)),
                   ),
                   TextSpan(
-                    text: 'Portfolio',
+                    text: 'Profile',
                     style: TextStyle(color: Color(0xFFFD853A)),
                   ),
                 ],
