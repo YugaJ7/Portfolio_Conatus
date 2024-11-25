@@ -17,8 +17,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
-
-  // GlobalKeys for sections
   final GlobalKey _homeKey = GlobalKey();
   final GlobalKey _aboutKey = GlobalKey();
   final GlobalKey _educationKey = GlobalKey();
@@ -27,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey _profileKey = GlobalKey();
   final GlobalKey _contactKey = GlobalKey();
 
-  // Scroll to a specific section
   void _scrollToSection(GlobalKey key) {
     final RenderBox renderBox = key.currentContext!.findRenderObject() as RenderBox;
     final position = renderBox.localToGlobal(Offset.zero, ancestor: null).dy;

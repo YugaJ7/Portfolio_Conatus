@@ -45,7 +45,6 @@ class EducationSection extends StatelessWidget {
             ),
             const SizedBox(height: 30),
 
-            // Timeline
             FixedTimeline.tileBuilder(
               builder: TimelineTileBuilder.connected(
                 contentsAlign: screenWidth >= 660

@@ -60,9 +60,7 @@ class Navbar extends StatelessWidget {
   }
 
   Widget _buildNavbarItem(String title, bool isActive, int index) {
-  // Add a state for hover
   ValueNotifier<bool> isHovered = ValueNotifier<bool>(false);
-
   return MouseRegion(
     onEnter: (_) => isHovered.value = true,
     onExit: (_) => isHovered.value = false,
@@ -91,5 +89,4 @@ class Navbar extends StatelessWidget {
     ),
   );
 }
-
 }

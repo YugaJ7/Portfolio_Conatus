@@ -247,9 +247,8 @@ class FooterSection extends StatelessWidget {
           style: TextStyle(color: Colors.grey, fontFamily: 'Regular'),
         ),
         const SizedBox(height: 10),
-        // Using Wrap for mobile layout to prevent overflow
         Wrap(
-          spacing: 10,  // Space between icons
+          spacing: 10, 
           children: [
             IconButton(
               icon: const ImageIcon(AssetImage('facebook.png')),

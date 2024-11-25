@@ -147,7 +147,6 @@ class LinearSkillItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    // Adjusting container width based on screen size
     final containerWidth = isSmallScreen ? screenWidth * 0.8 : screenWidth * 0.5;
 
     return Padding(
